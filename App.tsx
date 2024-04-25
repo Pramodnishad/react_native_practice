@@ -24,11 +24,13 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import BgColor from './components/BgColor'
+import RollDice from './components/RollDice'
 
 const App = () => {
   return (
     <View style={styles.constainer}>
-      <BgColor />
+      {/* <BgColor /> */}
+      <RollDice />
     </View>
   )
 }
