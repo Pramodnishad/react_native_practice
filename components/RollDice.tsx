@@ -6,7 +6,13 @@ import DiceFour from '../assets/Four.png'
 import DiceFive from '../assets/Five.png'
 import DiceSix from '../assets/Six.png'
 import { PropsWithChildren, useState } from 'react'
+import RNReactNativeHapticFeedback from 'react-native-haptic-feedback'
 
+const options = {
+    enableVibrateFallback: true,
+    ignoreAndroidSystemSettings: false,
+  };
+  
 type DiceProps = PropsWithChildren<{
     imageUrl:ImageSourcePropType
 }>
@@ -49,6 +55,8 @@ const RollDice = () => {
                 setDiceImage(DiceSix)
                 break;
         }
+        RNReactNativeHapticFeedback.trigger("impactLight", options);
+
     }
   return (
     <View style={styles.container}>
